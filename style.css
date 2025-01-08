@@ -14,14 +14,17 @@ body {
 
 .container {
   width: 100%;
+
   background-size: contain;
   padding-bottom: 20px;
 }
 
 .background {
   background-image: url(./images/pattern-bg-mobile.png);
+  position: relative;
   background-repeat: no-repeat;
-  background-size: 800px 270px;
+  background-size: 100% 100%;
+  height: 280px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -30,6 +33,9 @@ body {
 
 .ip-details {
   background-color: white;
+  position: absolute;
+  top: 50%;
+  z-index: 800;
   width: 300px;
   height: 300px;
   border-bottom-right-radius: 10px;
@@ -109,21 +115,16 @@ p {
 }
 
 #map {
-  height: 500px; /* Set height to ensure visibility */
-  width: 100%; /* Use full width */
-
+  height: calc(100vh - 270px);
+  width: 100%;
 }
 
 @media only screen and (min-width: 750px) {
-
-.container{
-  position: relative;
-}
-
   .background {
     background-image: url(./images/pattern-bg-mobile.png);
     background-repeat: no-repeat;
-    background-size: 1500px 220px;
+    background-size: 100% 100%;
+    position: relative;
     height: 220px;
     width: 100%;
     display: flex;
@@ -144,7 +145,7 @@ p {
     width: 90%;
     height: 135px;
     position: absolute;
-    top: 23%;
+    top: 80%;
     z-index: 800;
     display: flex;
     flex-direction: row;
@@ -162,5 +163,9 @@ p {
 
   .location-img {
     padding-top: 100px;
+  }
+  #map {
+    height: calc(100vh - 220px);
+    width: 100%;
   }
 }
